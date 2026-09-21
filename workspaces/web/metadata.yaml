@@ -1,0 +1,10 @@
+workspace: web
+version: 1.0
+structure:
+  - src/
+  - public/
+  - dist/
+features:
+  - setup
+  - build
+  - debug

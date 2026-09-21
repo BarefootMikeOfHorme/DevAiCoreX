@@ -1,0 +1,10 @@
+workspace: python
+version: 1.0
+structure:
+  - src/
+  - tests/
+  - venv/
+features:
+  - setup
+  - build
+  - debug

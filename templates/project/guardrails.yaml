@@ -1,0 +1,4 @@
+required:
+  - src/
+  - docs/
+  - metadata.yaml

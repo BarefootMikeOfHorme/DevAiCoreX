@@ -1,0 +1,7 @@
+engine: rust
+version: 1.0
+toolchain: cargo
+features:
+  - build
+  - debug
+  - lint

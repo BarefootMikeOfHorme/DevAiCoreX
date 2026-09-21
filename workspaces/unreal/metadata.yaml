@@ -1,0 +1,9 @@
+workspace: unreal
+version: 1.0
+structure:
+  - Source/
+  - Config/
+features:
+  - setup
+  - build
+  - debug

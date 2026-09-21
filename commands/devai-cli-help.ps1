@@ -1,0 +1,38 @@
+Write-Host "DevAiCoreX CLI Help"
+Write-Host "----------------------------------------"
+
+Write-Host "Core Commands:"
+Write-Host "  init        Initialize a new project"
+Write-Host "  detect      Detect project environment"
+Write-Host "  status      Show current context"
+Write-Host "  inspect     Inspect engine/workspace/AI/game"
+Write-Host "  validate    Validate project integrity"
+Write-Host ""
+
+Write-Host "Build Commands:"
+Write-Host "  build       Build project"
+Write-Host "  run         Run project"
+Write-Host "  test        Execute tests"
+Write-Host "  deploy      Deploy project"
+Write-Host "  clean       Clean artifacts"
+Write-Host ""
+
+Write-Host "Project Commands:"
+Write-Host "  backup      Backup project"
+Write-Host "  restore     Restore project"
+Write-Host ""
+
+Write-Host "Category Commands:"
+Write-Host "  engine      Engine-specific actions"
+Write-Host "  workspace   Workspace-specific actions"
+Write-Host "  ai          AI context actions"
+Write-Host "  game        Game engine actions"
+Write-Host "  shell       Shell mode actions"
+Write-Host ""
+
+Write-Host "Other:"
+Write-Host "  version     Show CLI version"
+Write-Host "  update      Update modules"
+Write-Host "  create      Creation Station"
+
+Write-Host "----------------------------------------"

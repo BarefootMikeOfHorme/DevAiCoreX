@@ -1,0 +1,7 @@
+engine: csharp
+version: 1.0
+toolchain: dotnet
+features:
+  - build
+  - debug
+  - lint

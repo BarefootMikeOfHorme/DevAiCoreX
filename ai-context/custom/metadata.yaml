@@ -1,0 +1,6 @@
+ai-context: custom
+version: 1.0
+features:
+  - train
+  - infer
+  - profile

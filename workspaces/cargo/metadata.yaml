@@ -1,0 +1,9 @@
+workspace: cargo
+version: 1.0
+structure:
+  - src/
+  - tests/
+features:
+  - setup
+  - build
+  - debug

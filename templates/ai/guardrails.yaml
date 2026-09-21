@@ -1,0 +1,5 @@
+required:
+  - model/
+  - metadata.yaml
+  - train.ps1
+  - infer.ps1

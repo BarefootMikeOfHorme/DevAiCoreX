@@ -1,0 +1,10 @@
+workspace: cpp
+version: 1.0
+structure:
+  - src/
+  - include/
+  - build/
+features:
+  - setup
+  - build
+  - debug

@@ -1,0 +1,7 @@
+engine: go
+version: 1.0
+toolchain: go
+features:
+  - build
+  - debug
+  - lint

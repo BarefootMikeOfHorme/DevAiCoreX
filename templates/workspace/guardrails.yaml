@@ -1,0 +1,4 @@
+required:
+  - src/
+  - metadata.yaml
+  - setup.ps1

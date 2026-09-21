@@ -1,0 +1,7 @@
+engine: node
+version: 1.0
+toolchain: node
+features:
+  - build
+  - debug
+  - lint

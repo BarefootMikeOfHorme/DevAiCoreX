@@ -1,0 +1,6 @@
+game-engine: custom
+version: 1.0
+features:
+  - build
+  - cook
+  - deploy

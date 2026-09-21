@@ -1,0 +1,6 @@
+structure:
+  folders:
+    - src/
+    - include/
+    - build/
+    - tests/

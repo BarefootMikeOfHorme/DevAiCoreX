@@ -1,0 +1,5 @@
+required:
+  - assets/
+  - metadata.yaml
+  - build.ps1
+  - deploy.ps1

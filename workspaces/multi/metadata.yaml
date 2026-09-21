@@ -1,0 +1,10 @@
+workspace: multi
+version: 1.0
+structure:
+  - python/
+  - node/
+  - shared/
+features:
+  - setup
+  - build
+  - debug

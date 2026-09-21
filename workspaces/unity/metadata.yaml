@@ -1,0 +1,9 @@
+workspace: unity
+version: 1.0
+structure:
+  - Assets/
+  - ProjectSettings/
+features:
+  - setup
+  - build
+  - debug
