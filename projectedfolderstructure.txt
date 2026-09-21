@@ -1,0 +1,164 @@
+DevAiCoreX/
+├── README.md
+├── LICENSE
+│
+├── docs/
+│   ├── architecture.md
+│   ├── shell-modes.md
+│   ├── creation-station.md
+│   ├── wpshell.md
+│   ├── DevCShell.md
+│   ├── lineage.md
+│   ├── evbp.md
+│   └── schemas/
+│       ├── creation-station-schema.yaml
+│       ├── engine-schema.yaml
+│       ├── profile-schema.yaml
+│       ├── workspace-schema.yaml
+│       └── ai-context-schema.yaml
+│
+├── wpshell/
+│   ├── README.md
+│   ├── core.ps1
+│   ├── routing.ps1
+│   ├── validation.ps1
+│   ├── environment.ps1
+│   └── modules/
+│       ├── logging.ps1
+│       ├── gpu-check.ps1
+│       ├── wsl-check.ps1
+│       └── cross-shell.ps1
+│
+├── DevCShell/
+│   ├── README.md
+│   ├── DevCShell.c
+│   ├── DevCShell.h
+│   ├── startup-menu.ps1
+│   ├── engine-loader.ps1
+│   ├── profile-loader.ps1
+│   ├── workspace-loader.ps1
+│   ├── project-detector.ps1
+│   └── modules/
+│       ├── vs-toolchain.ps1
+│       ├── creation-guardrails.ps1
+│       ├── ai-context-loader.ps1
+│       └── game-engine-loader.ps1
+│
+├── scripts/
+│   ├── README.md
+│   ├── windows-terminal/
+│   │   ├── add-devshell-profile.ps1
+│   │   ├── safe-update-settings.ps1
+│   │   └── backup-settings.ps1
+│   ├── powershell-profile/
+│   │   ├── global-profile.ps1
+│   │   └── vs2022-profile.ps1
+│   └── wsl/
+│       ├── ubuntu/
+│       │   ├── journald-setup.sh
+│       │   ├── ai-logrotate.sh
+│       │   └── gpu-validate.sh
+│       ├── kali/
+│       │   ├── journald-setup.sh
+│       │   ├── ai-logrotate.sh
+│       │   └── pentest-tools.sh
+│       └── athena/
+│           ├── journald-setup.sh
+│           ├── ai-logrotate.sh
+│           └── arch-tools.sh
+│
+├── engines/
+│   ├── README.md
+│   ├── C/
+│   │   ├── templates/
+│   │   ├── build/
+│   │   ├── debug/
+│   │   └── ai-context/
+│   ├── C++/
+│   ├── Rust/
+│   ├── Python/
+│   ├── PyO3/
+│   ├── Mixed/
+│   ├── AI/
+│   └── GPU/
+│
+├── profiles/
+│   ├── README.md
+│   ├── game-engine/
+│   ├── ai-model/
+│   ├── compiler/
+│   ├── toolchain/
+│   ├── embedded/
+│   └── hpc/
+│
+├── workspaces/
+│   ├── README.md
+│   ├── C/
+│   │   ├── src/
+│   │   ├── include/
+│   │   └── build/
+│   ├── C++/
+│   ├── rust/
+│   ├── python/
+│   ├── py03/
+│   │   ├── rust/
+│   │   ├── python/
+│   │   └── bindings/
+│   ├── web/
+│   │   ├── html/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── api/
+│   └── multi/
+│       ├── C/
+│       ├── C++/
+│       ├── rust/
+│       ├── python/
+│       ├── py03/
+│       └── web/
+│
+├── game-engines/
+│   ├── README.md
+│   ├── unreal/
+│   │   ├── templates/
+│   │   ├── build/
+│   │   ├── debug/
+│   │   └── ai-context/
+│   ├── unity/
+│   ├── godot/
+│   ├── cryengine/
+│   └── custom/
+│       └── <engine-name>/
+│
+├── monitoring/
+│   ├── README.md
+│   ├── terminal/
+│   │   ├── btop/
+│   │   ├── bottom/
+│   │   └── glances/
+│   ├── web-ui/
+│   │   ├── grafana/
+│   │   ├── prometheus/
+│   │   └── netdata/
+│   └── security/
+│       ├── kali-tools/
+│       └── athena-tools/
+│
+└── ai-context/
+    ├── README.md
+    ├── rules/
+    │   ├── creation-station.yaml
+    │   ├── engine-rules.yaml
+    │   ├── profile-rules.yaml
+    │   └── workspace-rules.yaml
+    ├── prompts/
+    │   ├── creation-startup.json
+    │   ├── engine-selection.json
+    │   ├── profile-selection.json
+    │   └── workspace-selection.json
+    ├── lineage/
+    │   ├── project-lineage.jsonld
+    │   └── evbp.json
+    └── memory/
+        ├── project-memory.json
+        └── ai-memory.json
