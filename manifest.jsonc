@@ -1,0 +1,142 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-21T02:02:19Z",
+  "entries": [
+    {
+      "kind": "engine",
+      "name": "engine",
+      "parentPath": "engine",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace",
+      "name": "workspace",
+      "parentPath": "workspace",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "ai-context",
+      "name": "ai-context",
+      "parentPath": "ai-context",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "game-engine",
+      "name": "game-engine",
+      "parentPath": "game-engine",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "project",
+      "name": "devai-project",
+      "parentPath": "devai-project",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "cargo",
+      "parentPath": "cargo",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "cpp",
+      "parentPath": "cpp",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "multi",
+      "parentPath": "multi",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "python",
+      "parentPath": "python",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "unity",
+      "parentPath": "unity",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "unreal",
+      "parentPath": "unreal",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "workspace-metadata",
+      "name": "web",
+      "parentPath": "web",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "template-metadata",
+      "name": "ai",
+      "parentPath": "ai",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "template-metadata",
+      "name": "engine",
+      "parentPath": "engine",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "template-metadata",
+      "name": "game",
+      "parentPath": "game",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "template-metadata",
+      "name": "project",
+      "parentPath": "project",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    },
+    {
+      "kind": "template-metadata",
+      "name": "workspace",
+      "parentPath": "workspace",
+      "yamlc": true,
+      "jsonc": true,
+      "cbor": true
+    }
+  ]
+}

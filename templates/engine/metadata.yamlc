@@ -1,0 +1,8 @@
+metadata:
+  type: template
+  version: 1.0.0
+  origin: creation-station
+  modules:
+    - template-core
+    - template-routing
+  updated: 2026-09-21T01:05:00Z

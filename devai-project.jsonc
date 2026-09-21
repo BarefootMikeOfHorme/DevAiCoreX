@@ -1,0 +1,13 @@
+// JSONC generated for module: devai-project
+{
+  "project": {
+    "updated": "2026-09-21T00:55:00Z",
+    "type": "devai-corex",
+    "version": "1.0.0",
+    "modules": [
+      "project-core",
+      "project-routing",
+      "project-tools"
+    ]
+  }
+}

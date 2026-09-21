@@ -1,0 +1,12 @@
+{
+  "workspace": {
+    "updated": "2026-09-21T00:50:00Z",
+    "type": "default",
+    "version": "1.0.0",
+    "modules": [
+      "workspace-core",
+      "workspace-shell",
+      "workspace-tools"
+    ]
+  }
+}

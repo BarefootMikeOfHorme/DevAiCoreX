@@ -1,0 +1,46 @@
+# ============================================
+# DevAiCoreX - Stage-6.5 Guardrail Profiles
+# File: guardrail-profiles.yamlc
+# ============================================
+
+profiles:
+
+  development:
+    mode: hybrid
+    strict: low
+    soft: high
+    debug: verbose
+    autoRepair: true
+    autoUpdate: true
+    aiHandoff: true
+    description: "Developer-friendly mode with maximum visibility and minimal interruption."
+
+  production:
+    mode: strict
+    strict: high
+    soft: low
+    debug: minimal
+    autoRepair: false
+    autoUpdate: true
+    aiHandoff: true
+    description: "Stable mode for deployed environments with strict validation."
+
+  testing:
+    mode: strict
+    strict: high
+    soft: medium
+    debug: high
+    autoRepair: false
+    autoUpdate: false
+    aiHandoff: true
+    description: "Testing mode with strict checks and verbose debug output."
+
+  recovery:
+    mode: hybrid
+    strict: medium
+    soft: maximum
+    debug: medium
+    autoRepair: true
+    autoUpdate: true
+    aiHandoff: true
+    description: "Recovery mode for repairing broken schema, metadata, or inheritance."

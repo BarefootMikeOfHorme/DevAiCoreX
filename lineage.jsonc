@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-21T01:10:00Z",
+  "origin": "creation-station",
+  "modules": [
+    "engine",
+    "workspace",
+    "ai-context",
+    "game-engine",
+    "devai-project"
+  ],
+  "description": "Tracks schema ancestry, versioning, and module inheritance for Stage-5 schema operations."
+}

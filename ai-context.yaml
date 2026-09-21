@@ -1,0 +1,9 @@
+aiContext:
+  type: core
+  version: 1.0.0
+  modules:
+    - ai-core
+    - ai-routing
+    - ai-tools
+  updated: 2026-09-21T00:50:00Z
+

@@ -1,0 +1,8 @@
+gameEngine:
+  type: core
+  version: 1.0.0
+  modules:
+    - game-core
+    - game-routing
+    - game-tools
+  updated: 2026-09-21T00:55:00Z

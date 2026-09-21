@@ -1,0 +1,106 @@
+manifest:
+  version: 1.0.0
+  updated: 2026-09-21T02:02:19Z
+  entries:
+    - kind: engine
+      name: engine
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\engine
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace
+      name: workspace
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspace
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: ai-context
+      name: ai-context
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\ai-context
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: game-engine
+      name: game-engine
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\game-engine
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: project
+      name: devai-project
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\devai-project
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: cargo
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\cargo\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: cpp
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\cpp\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: multi
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\multi\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: python
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\python\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: unity
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\unity\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: unreal
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\unreal\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: workspace-metadata
+      name: web
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\workspaces\web\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: template-metadata
+      name: ai
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\templates\ai\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: template-metadata
+      name: engine
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\templates\engine\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: template-metadata
+      name: game
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\templates\game\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: template-metadata
+      name: project
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\templates\project\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True
+    - kind: template-metadata
+      name: workspace
+      parentPath: C:\Users\Administrator\Desktop\DevAiCoreX\templates\workspace\metadata
+      yamlc: True
+      jsonc: True
+      cbor: True

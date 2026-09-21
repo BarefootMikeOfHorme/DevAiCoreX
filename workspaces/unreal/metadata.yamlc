@@ -1,0 +1,8 @@
+metadata:
+  workspace: unreal
+  version: 1.0.0
+  modules:
+    - unreal-core
+    - unreal-build
+    - unreal-tools
+  updated: 2026-09-21T01:00:00Z

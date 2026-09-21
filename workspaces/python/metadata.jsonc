@@ -1,0 +1,10 @@
+{
+  "workspace": "python",
+  "version": "1.0.0",
+  "origin": "creation-station",
+  "updated": "2026-09-21T01:00:00Z",
+  "modules": [
+    "python-core",
+    "python-tools"
+  ]
+}

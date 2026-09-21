@@ -1,0 +1,109 @@
+# ============================================
+# DevAiCoreX - Stage-6.5 Guardrail Engine (Hybrid Mode)
+# File: guardrails.ps1
+# ============================================
+
+param(
+    [string]$Root = "C:\Users\Administrator\Desktop\DevAiCoreX"
+)
+
+Write-Host "`n=== DevAiCoreX Guardrail Engine (Hybrid Mode) ===`n" -ForegroundColor Cyan
+
+$guardYaml = "$Root\guardrails.yamlc"
+$guardJson = "$Root\guardrails.jsonc"
+
+if (!(Test-Path $guardYaml) -or !(Test-Path $guardJson)) {
+    Write-Host "[FATAL] Guardrail definitions missing." -ForegroundColor Red
+    exit 1
+}
+
+$guard = Get-Content $guardJson | ConvertFrom-Json
+
+$manifestPath = "$Root\manifest.jsonc"
+if (!(Test-Path $manifestPath)) {
+    Write-Host "[FATAL] Manifest missing." -ForegroundColor Red
+    exit 1
+}
+
+$manifest = Get-Content $manifestPath | ConvertFrom-Json
+
+$report = @()
+Write-Host "Validating schema entries..." -ForegroundColor Yellow
+
+foreach ($entry in $manifest.entries) {
+
+    $name = $entry.name
+    $kind = $entry.kind
+    $path = $entry.parentPath
+
+    Write-Host "`nChecking: $name ($kind)" -ForegroundColor White
+
+    $entryReport = @{
+        name   = $name
+        kind   = $kind
+        issues = @()
+        repairs = @()
+        fatal  = @()
+        debug  = @()
+    }
+
+    # STRICT CHECKS
+    foreach ($fatal in $guard.guardrails.strict.fatalOn) {
+        switch ($fatal) {
+
+            "missingCoreSchema" {
+                if ($kind -in @("engine","workspace","ai-context","game-engine","project")) {
+                    if (-not $entry.yamlc -or -not $entry.jsonc -or -not $entry.cbor) {
+                        $msg = "Missing core schema for $name"
+                        Write-Host "[FATAL] $msg" -ForegroundColor Red
+                        $entryReport.fatal += $msg
+                    }
+                }
+            }
+
+            "corruptedCBOR" {
+                if ($entry.cbor -and (Test-Path "$path.cbor")) {
+                    $cborContent = Get-Content "$path.cbor" -ErrorAction SilentlyContinue
+                    if ($cborContent.Length -lt 10) {
+                        $msg = "CBOR corrupted for $name"
+                        Write-Host "[FATAL] $msg" -ForegroundColor Red
+                        $entryReport.fatal += $msg
+                    }
+                }
+            }
+
+            "missingRequiredFields" {
+                $required = $guard.guardrails.strict.requiredFields
+                foreach ($field in $required) {
+                    if (-not $entry.PSObject.Properties.Name -contains $field) {
+                        $msg = "Missing required field '$field' in $name"
+                        Write-Host "[FATAL] $msg" -ForegroundColor Red
+                        $entryReport.fatal += $msg
+                    }
+                }
+            }
+        }
+    }
+
+    # SOFT CHECKS (Auto-Repair)
+    foreach ($repair in $guard.guardrails.soft.autoRepair) {
+        switch ($repair) {
+
+            "missingCBOR" {
+                if (-not $entry.cbor) {
+                    $msg = "Regenerating CBOR placeholder for $name"
+                    Write-Host "[REPAIR] $msg" -ForegroundColor Green
+                    $guardCBOR = $guard.guardrails.cbor.placeholderHex
+@"
+$guardCBOR
+"@ | Set-Content "$path.cbor"
+                    $entryReport.repairs += $msg
+                }
+            }
+
+            "missingYAMLC" {
+                if (-not $entry.yamlc) {
+                    $msg = "Regenerating YAML-C placeholder for $name"
+                    Write-Host "[REPAIR] $msg" -ForegroundColor Green
+@'
+placeholder: true

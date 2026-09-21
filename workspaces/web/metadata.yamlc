@@ -1,0 +1,8 @@
+metadata:
+  workspace: web
+  version: 1.0.0
+  modules:
+    - web-core
+    - web-server
+    - web-tools
+  updated: 2026-09-21T01:00:00Z

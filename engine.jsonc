@@ -1,0 +1,13 @@
+// JSONC generated for module: engine
+{
+  "engine": {
+    "updated": "2026-09-21T00:50:00Z",
+    "type": "core",
+    "version": "1.0.0",
+    "modules": [
+      "engine-core",
+      "engine-routing",
+      "engine-guardrails"
+    ]
+  }
+}
