@@ -1,10 +1,13 @@
 {
+  "name": "game",
   "type": "template",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:05:00Z",
-  "modules": [
-    "template-core",
-    "template-routing"
-  ]
+  "description": "Game template module providing scaffolding for game-specific DevAiCoreX modules.",
+  "capabilities": [
+    "Scene scaffolding",
+    "Entity templates",
+    "Physics integration patterns",
+    "Rendering templates"
+  ],
+  "dependencies": []
 }

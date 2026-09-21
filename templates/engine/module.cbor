@@ -1,0 +1,6 @@
+template:
+  type: "engine"
+  runtime: map
+  hooks: array
+  lifecycle: map
+  version: "1.0.0"

@@ -1,0 +1,6 @@
+workspace:
+  type: "web"
+  frontend: map
+  backend: map
+  assets: map
+  version: "1.0.0"

@@ -1,10 +1,13 @@
 {
+  "name": "project",
   "type": "template",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:05:00Z",
-  "modules": [
-    "template-core",
-    "template-routing"
-  ]
+  "description": "Project template module providing scaffolding for DevAiCoreX project structures.",
+  "capabilities": [
+    "Project metadata templates",
+    "Module registration patterns",
+    "Lifecycle scaffolding",
+    "Project initialization"
+  ],
+  "dependencies": []
 }

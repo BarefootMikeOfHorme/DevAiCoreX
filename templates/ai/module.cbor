@@ -1,0 +1,6 @@
+template:
+  type: "ai"
+  scaffolding: map
+  hooks: array
+  memory: array
+  version: "1.0.0"

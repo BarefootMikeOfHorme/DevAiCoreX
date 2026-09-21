@@ -1,0 +1,6 @@
+template:
+  type: "project"
+  metadata: map
+  lifecycle: map
+  modules: array
+  version: "1.0.0"

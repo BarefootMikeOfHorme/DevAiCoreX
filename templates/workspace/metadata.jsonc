@@ -1,10 +1,13 @@
 {
+  "name": "workspace",
   "type": "template",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:05:00Z",
-  "modules": [
-    "template-core",
-    "template-routing"
-  ]
+  "description": "Workspace template module providing scaffolding for DevAiCoreX workspace definitions.",
+  "capabilities": [
+    "Workspace profile templates",
+    "Tooling integration patterns",
+    "Environment scaffolding",
+    "Workspace-module mapping templates"
+  ],
+  "dependencies": []
 }

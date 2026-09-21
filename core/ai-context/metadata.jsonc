@@ -1,0 +1,16 @@
+{
+  // DevAiCoreX module metadata
+  "name": "ai-context",
+  "type": "core",
+  "version": "1.0.0",
+  "created": "2026-09-21T04:06:00Z",
+  "updated": "2026-09-21T04:19:00Z",
+  "description": "Provides contextual AI state management, shared memory layers, and runtime context injection for DevAiCoreX systems.",
+  "capabilities": [
+    "Context state tracking",
+    "AI memory injection",
+    "Runtime context hooks",
+    "Cross-module context sharing"
+  ],
+  "dependencies": []
+}

@@ -1,10 +1,13 @@
 {
-  "workspace": "cargo",
+  "name": "cargo",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "cargo-core",
-    "cargo-tools"
-  ]
+  "description": "Rust/Cargo workspace integration for DevAiCoreX, providing build pipelines, dependency resolution, and module compilation.",
+  "capabilities": [
+    "Cargo.toml parsing",
+    "Rust build orchestration",
+    "Dependency graph resolution",
+    "Workspace module linking"
+  ],
+  "dependencies": []
 }

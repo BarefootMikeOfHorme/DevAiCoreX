@@ -1,0 +1,6 @@
+# CBOR structure for engine module
+engine:
+  runtime: map
+  scheduler: map
+  modules: array
+  version: "1.0.0"

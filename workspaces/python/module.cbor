@@ -1,0 +1,6 @@
+workspace:
+  type: "python"
+  venv: map
+  pip: map
+  runtime: map
+  version: "1.0.0"

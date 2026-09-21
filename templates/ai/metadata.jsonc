@@ -1,10 +1,13 @@
 {
+  "name": "ai",
   "type": "template",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:05:00Z",
-  "modules": [
-    "template-core",
-    "template-routing"
-  ]
+  "description": "AI template module providing scaffolding for AI-driven DevAiCoreX modules.",
+  "capabilities": [
+    "AI module scaffolding",
+    "Context integration",
+    "Memory layer templates",
+    "Runtime AI hooks"
+  ],
+  "dependencies": []
 }

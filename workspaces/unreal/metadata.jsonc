@@ -1,11 +1,13 @@
 {
-  "workspace": "unreal",
+  "name": "unreal",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "unreal-core",
-    "unreal-build",
-    "unreal-tools"
-  ]
+  "description": "Unreal Engine workspace integration for DevAiCoreX, supporting module injection, build pipelines, and asset mapping.",
+  "capabilities": [
+    "Unreal build pipeline integration",
+    "C++ module injection",
+    "Asset mapping",
+    "Project synchronization"
+  ],
+  "dependencies": []
 }

@@ -1,10 +1,13 @@
 {
-  "workspace": "multi",
+  "name": "multi",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "multi-core",
-    "multi-tools"
-  ]
+  "description": "Multi-language workspace integration for DevAiCoreX, enabling hybrid module development.",
+  "capabilities": [
+    "Cross-language linking",
+    "Hybrid module orchestration",
+    "Shared build pipelines",
+    "Unified dependency resolution"
+  ],
+  "dependencies": []
 }

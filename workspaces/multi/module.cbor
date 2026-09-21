@@ -1,0 +1,6 @@
+workspace:
+  type: "multi"
+  languages: array
+  pipelines:
+    shared: map
+  version: "1.0.0"

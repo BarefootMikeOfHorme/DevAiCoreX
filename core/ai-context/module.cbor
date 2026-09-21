@@ -1,0 +1,8 @@
+# CBOR structure for ai-context module
+# Defines AI context state, memory layers, and runtime injection points.
+
+context:
+  state: map
+  memory: array
+  hooks: array
+  version: "1.0.0"

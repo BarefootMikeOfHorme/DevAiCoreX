@@ -1,0 +1,6 @@
+# CBOR structure for workspace module
+workspace:
+  profiles: array
+  config: map
+  tools: array
+  version: "1.0.0"

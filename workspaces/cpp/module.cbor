@@ -1,0 +1,8 @@
+workspace:
+  type: "cpp"
+  toolchains:
+    msvc: map
+    clang: map
+    gcc: map
+  cmake: map
+  version: "1.0.0"

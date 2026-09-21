@@ -1,0 +1,6 @@
+template:
+  type: "workspace"
+  profiles: array
+  tools: array
+  config: map
+  version: "1.0.0"

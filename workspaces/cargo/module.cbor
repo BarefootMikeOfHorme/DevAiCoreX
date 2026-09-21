@@ -1,0 +1,8 @@
+workspace:
+  type: "cargo"
+  pipelines:
+    build: map
+    test: map
+    release: map
+  dependencies: array
+  version: "1.0.0"

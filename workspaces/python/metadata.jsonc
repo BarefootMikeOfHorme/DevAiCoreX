@@ -1,10 +1,13 @@
 {
-  "workspace": "python",
+  "name": "python",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "python-core",
-    "python-tools"
-  ]
+  "description": "Python workspace integration for DevAiCoreX, supporting virtual environments, pip, and module injection.",
+  "capabilities": [
+    "Virtual environment management",
+    "pip dependency resolution",
+    "Python module injection",
+    "Runtime Python hooks"
+  ],
+  "dependencies": []
 }

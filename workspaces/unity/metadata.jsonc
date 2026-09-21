@@ -1,10 +1,13 @@
 {
-  "workspace": "unity",
+  "name": "unity",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "unity-core",
-    "unity-tools"
-  ]
+  "description": "Unity workspace integration for DevAiCoreX, supporting project linking, asset pipelines, and module injection.",
+  "capabilities": [
+    "Unity project linking",
+    "Asset pipeline integration",
+    "C# module injection",
+    "Scene/module synchronization"
+  ],
+  "dependencies": []
 }

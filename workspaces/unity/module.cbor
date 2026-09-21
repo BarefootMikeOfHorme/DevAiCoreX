@@ -1,0 +1,6 @@
+workspace:
+  type: "unity"
+  project: map
+  assets: map
+  injection: map
+  version: "1.0.0"

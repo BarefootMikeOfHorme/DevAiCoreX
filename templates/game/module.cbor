@@ -1,0 +1,7 @@
+template:
+  type: "game"
+  scenes: array
+  entities: array
+  physics: map
+  rendering: map
+  version: "1.0.0"

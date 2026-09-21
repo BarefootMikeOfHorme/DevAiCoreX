@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "type": "core",
+  "version": "1.0.0",
+  "created": "2026-09-21T04:06:00Z",
+  "updated": "2026-09-21T04:19:00Z",
+  "description": "Defines workspace-level configuration, environment profiles, and tooling integration for DevAiCoreX.",
+  "capabilities": [
+    "Environment profiles",
+    "Workspace configuration",
+    "Tooling integration",
+    "Module workspace mapping"
+  ],
+  "dependencies": []
+}

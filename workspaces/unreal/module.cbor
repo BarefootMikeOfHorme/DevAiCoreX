@@ -1,0 +1,6 @@
+workspace:
+  type: "unreal"
+  build: map
+  injection: map
+  assets: map
+  version: "1.0.0"

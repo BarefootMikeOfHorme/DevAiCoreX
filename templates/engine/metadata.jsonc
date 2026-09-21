@@ -1,10 +1,13 @@
 {
+  "name": "engine",
   "type": "template",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:05:00Z",
-  "modules": [
-    "template-core",
-    "template-routing"
-  ]
+  "description": "Engine template module providing scaffolding for runtime engine extensions.",
+  "capabilities": [
+    "Engine extension scaffolding",
+    "Runtime hook templates",
+    "Module orchestration patterns",
+    "Lifecycle templates"
+  ],
+  "dependencies": []
 }

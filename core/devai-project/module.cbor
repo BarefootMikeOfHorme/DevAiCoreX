@@ -1,0 +1,6 @@
+# CBOR structure for devai-project module
+project:
+  meta: map
+  modules: array
+  lifecycle: map
+  version: "1.0.0"

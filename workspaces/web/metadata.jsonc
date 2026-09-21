@@ -1,11 +1,13 @@
 {
-  "workspace": "web",
+  "name": "web",
+  "type": "workspace",
   "version": "1.0.0",
-  "origin": "creation-station",
-  "updated": "2026-09-21T01:00:00Z",
-  "modules": [
-    "web-core",
-    "web-server",
-    "web-tools"
-  ]
+  "description": "Web workspace integration for DevAiCoreX, supporting frontend pipelines, backend hooks, and module injection.",
+  "capabilities": [
+    "Frontend build pipelines",
+    "Backend runtime hooks",
+    "Web module injection",
+    "Asset bundling"
+  ],
+  "dependencies": []
 }
