@@ -1,0 +1,25 @@
+
+InputObject                                                                                                    SideIndic
+                                                                                                               ator
+-----------                                                                                                    ---------
+    $moduleName = Resolve-Key $entry "name"                                                                    =>
+    $moduleName = $entry.name                                                                                  <=
+    $moduleKind = Resolve-Key $entry "kind"                                                                    =>
+    $moduleKind = $entry.kind                                                                                  <=
+    $parentPath = Resolve-Key $entry "parentPath"                                                              =>
+    $parentPath = $Entry.parentPath                                                                            <=
+    $name = Resolve-Key $entry "name"                                                                          =>
+    $name = $entry.name                                                                                        <=
+    $kind = Resolve-Key $entry "kind"                                                                          =>
+    $kind = $entry.kind                                                                                        <=
+                        $msg = ("{0}: {1}" -f Missing core schema components for ${name}, $missing -join ', ') =>
+                    if (-not Resolve-Key $entry "PSObject".Properties.Name -contains $field) {                 =>
+                    $msg = ("{0}: {1}" -f Missing required fields in ${name}, $missingFields -join ', ')       =>
+                        if (-not Resolve-Key $entry "PSObject".Properties.Name -contains $key) {               =>
+                        $msg = ("{0}: {1}" -f Applied defaults to ${name}, $applied -join ', ')                =>
+                        $msg = "Missing core schema components for ${name}: $($missing -join ', ')"            <=
+                    if (-not $entry.PSObject.Properties.Name -contains $field) {                               <=
+                    $msg = "Missing required fields in ${name}: $($missingFields -join ', ')"                  <=
+                        if (-not $entry.PSObject.Properties.Name -contains $key) {                             <=
+                        $msg = "Applied defaults to ${name}: $($applied -join ', ')"                           <=
+

@@ -200,8 +200,8 @@ $manifestClean = ($manifestRaw -replace "//.*","")
 $manifest = $manifestClean | ConvertFrom-Json
 
 foreach ($entry in $manifest.entries) {
-    $moduleName = $entry.name
-    $moduleKind = $entry.kind
+    $moduleName = Resolve-Key $entry "name"
+    $moduleKind = Resolve-Key $entry "kind"
 
     Write-Host ("Checking: {0} ({1})" -f $moduleName, $moduleKind) -ForegroundColor Cyan
 
@@ -283,7 +283,7 @@ function Get-SchemaPaths {
     param($Entry, [string]$Root)
 
     # parentPath may include .ps1; schemas use base name without extension
-    $parentPath = $Entry.parentPath
+    $parentPath = Resolve-Key $entry "parentPath"
     $baseName   = [System.IO.Path]::GetFileNameWithoutExtension($parentPath)
 
     return @{
@@ -332,8 +332,8 @@ function Test-CborReadable {
 
 foreach ($entry in $manifest.entries) {
 
-    $name = $entry.name
-    $kind = $entry.kind
+    $name = Resolve-Key $entry "name"
+    $kind = Resolve-Key $entry "kind"
 
     $paths = Get-SchemaPaths -Entry $entry -Root $Root
     $yamlPath = $paths.yaml
@@ -366,7 +366,7 @@ foreach ($entry in $manifest.entries) {
                     if (-not (Test-Path $cborPath)) { $missing += "cbor" }
 
                     if ($missing.Count -gt 0) {
-                        $msg = "Missing core schema components for ${name}: $($missing -join ', ')"
+                        $msg = ("{0}: {1}" -f Missing core schema components for ${name}, $missing -join ', ')
                         Write-Host "[FATAL] $msg" -ForegroundColor Red
                         $entryReport.fatal += $msg
 
@@ -440,12 +440,12 @@ foreach ($entry in $manifest.entries) {
                 $required      = $guard.guardrails.strict.requiredFields
                 $missingFields = @()
                 foreach ($field in $required) {
-                    if (-not $entry.PSObject.Properties.Name -contains $field) {
+                    if (-not Resolve-Key $entry "PSObject".Properties.Name -contains $field) {
                         $missingFields += $field
                     }
                 }
                 if ($missingFields.Count -gt 0) {
-                    $msg = "Missing required fields in ${name}: $($missingFields -join ', ')"
+                    $msg = ("{0}: {1}" -f Missing required fields in ${name}, $missingFields -join ', ')
                     Write-Host "[FATAL] $msg" -ForegroundColor Red
                     $entryReport.fatal += $msg
 
@@ -527,13 +527,13 @@ foreach ($entry in $manifest.entries) {
                     $defaults = $guard.guardrails.defaults
                     $applied  = @()
                     foreach ($key in $defaults.PSObject.Properties.Name) {
-                        if (-not $entry.PSObject.Properties.Name -contains $key) {
+                        if (-not Resolve-Key $entry "PSObject".Properties.Name -contains $key) {
                             $entry | Add-Member -NotePropertyName $key -NotePropertyValue $defaults.$key -Force
                             $applied += $key
                         }
                     }
                     if ($applied.Count -gt 0) {
-                        $msg = "Applied defaults to ${name}: $($applied -join ', ')"
+                        $msg = ("{0}: {1}" -f Applied defaults to ${name}, $applied -join ', ')
                         Write-Host "[REPAIR] $msg" -ForegroundColor Green
                         $entryReport.repairs += $msg
 
