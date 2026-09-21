@@ -102,12 +102,15 @@ Write-Host ("Profile behavior: strict={0}, soft={1}, debug={2}, autoRepair={3}, 
 
 # === DevAiCoreX Unified Guardrail Loader ===
 
+# Resolve-Key reads a value out of either a Hashtable (what the CBOR decoder
+# returns for a map) or a PSCustomObject (what ConvertFrom-Json returns).
+# It also understands the CBOR-LD numeric key compression scheme, so the
+# same call site works whether the underlying data came from JSON, YAML,
+# or packed CBOR.
 function Resolve-Key {
-    param($map, $key)
+    param($Map, [string]$Key)
 
-    if ($map -isnot [hashtable]) { return $null }
-
-    if ($map.ContainsKey($key)) { return $map[$key] }
+    if ($null -eq $Map) { return $null }
 
     # CBOR-LD numeric key compression map
     $ctx = @{
@@ -121,9 +124,25 @@ function Resolve-Key {
         "guardrails" = 8
     }
 
-    if ($ctx.ContainsKey($key)) {
-        $num = $ctx[$key]
-        if ($map.ContainsKey($num)) { return $map[$num] }
+    if ($Map -is [System.Collections.IDictionary]) {
+        if ($Map.Contains($Key)) { return $Map[$Key] }
+
+        if ($ctx.ContainsKey($Key) -and $Map.Contains($ctx[$Key])) {
+            return $Map[$ctx[$Key]]
+        }
+
+        return $null
+    }
+
+    if ($Map -is [System.Management.Automation.PSCustomObject]) {
+        if ($Map.PSObject.Properties.Name -contains $Key) { return $Map.$Key }
+
+        if ($ctx.ContainsKey($Key)) {
+            $numKey = [string]$ctx[$Key]
+            if ($Map.PSObject.Properties.Name -contains $numKey) { return $Map.$numKey }
+        }
+
+        return $null
     }
 
     return $null
@@ -153,7 +172,7 @@ function Load-GuardrailEntry {
 
         ".jsonc" {
             $raw = Get-Content $path -Raw
-            $clean = ($raw -replace "//.*","")
+            $clean = ($raw -replace "//.*", "")
             return (ConvertFrom-Json $clean)
         }
 
@@ -195,10 +214,15 @@ Write-Host ("Profile behavior: strict={0}, soft={1}, debug={2}, autoRepair={3}, 
 Write-Host "[HOOK] Pre-Manifest" -ForegroundColor DarkGray
 Write-Host "Validating and enforcing schema entries..." -ForegroundColor DarkGray
 
-$manifestRaw = Get-Content $manifestPath -Raw
-$manifestClean = ($manifestRaw -replace "//.*","")
-$manifest = $manifestClean | ConvertFrom-Json
+$manifestRaw   = Get-Content $manifestPath -Raw
+$manifestClean = ($manifestRaw -replace "//.*", "")
+$manifest      = $manifestClean | ConvertFrom-Json
 
+# --- Quick per-module sanity pass -----------------------------------------
+# Looks for a sidecar metadata file for each module (by kind/name) and
+# spot-checks that the core identity fields are present and self-consistent.
+# This is a fast pre-flight check; the authoritative strict/soft/auto-update
+# enforcement pass over $manifest.entries happens further below.
 foreach ($entry in $manifest.entries) {
     $moduleName = $entry.name
     $moduleKind = $entry.kind
@@ -209,23 +233,23 @@ foreach ($entry in $manifest.entries) {
     $moduleDir = Join-Path $Root $moduleKind
     $metaFiles = Get-ChildItem -Path $moduleDir -Filter "$moduleName.*" -ErrorAction SilentlyContinue
 
-if (-not $metaFiles -or $metaFiles.Count -eq 0) {
-    Write-Host ("[WARN] No metadata file found for module: {0}" -f $moduleName) -ForegroundColor DarkYellow
-    continue
-}
+    if (-not $metaFiles -or $metaFiles.Count -eq 0) {
+        Write-Host ("[WARN] No metadata file found for module: {0}" -f $moduleName) -ForegroundColor DarkYellow
+        continue
+    }
 
-$metaPath = $metaFiles[0].FullName
+    $metaPath = $metaFiles[0].FullName
 
-try {
-    $entryMap = Load-GuardrailEntry $metaPath
-}
-catch {
-    Write-Host ("[FATAL] Unable to load guardrail entry for {0} from {1}: {2}" -f $moduleName, $metaPath, $_.Exception.Message) -ForegroundColor Red
-    continue
-}
+    try {
+        $entryMap = Load-GuardrailEntry $metaPath
+    }
+    catch {
+        Write-Host ("[FATAL] Unable to load guardrail entry for {0} from {1}: {2}" -f $moduleName, $metaPath, $_.Exception.Message) -ForegroundColor Red
+        continue
+    }
 
-    if ($entryMap -isnot [hashtable]) {
-        Write-Host "[FATAL] Guardrail entry for $moduleName is not a map; skipping." -ForegroundColor Red
+    if ($null -eq $entryMap) {
+        Write-Host "[FATAL] Guardrail entry for $moduleName loaded empty; skipping." -ForegroundColor Red
         continue
     }
 
@@ -264,9 +288,6 @@ catch {
 }
 
 Write-Host "`nGuardrail enforcement complete.`n" -ForegroundColor Cyan
-
-# Load manifest
-$manifest = Get-Content $manifestPath | ConvertFrom-Json
 
 # Call pre-manifest hook
 if (Get-Command Invoke-PreManifestHook -ErrorAction SilentlyContinue) {
@@ -335,7 +356,7 @@ foreach ($entry in $manifest.entries) {
     $name = $entry.name
     $kind = $entry.kind
 
-    $paths = Get-SchemaPaths -Entry $entry -Root $Root
+    $paths    = Get-SchemaPaths -Entry $entry -Root $Root
     $yamlPath = $paths.yaml
     $jsonPath = $paths.json
     $cborPath = $paths.cbor
@@ -359,7 +380,7 @@ foreach ($entry in $manifest.entries) {
         switch ($fatal) {
 
             "missingCoreSchema" {
-                if ($kind -in @("engine","workspace","ai-context","game-engine","project")) {
+                if ($kind -in @("engine", "workspace", "ai-context", "game-engine", "project")) {
                     $missing = @()
                     if (-not (Test-Path $yamlPath)) { $missing += "yamlc" }
                     if (-not (Test-Path $jsonPath)) { $missing += "jsonc" }
@@ -577,102 +598,93 @@ foreach ($entry in $manifest.entries) {
 
                         Write-Host ("[UPDATE] {0}" -f $msg) -ForegroundColor Cyan
                         $entryReport.issues += $msg
+
+                        $entryTasks += @{
+                            type           = "update-version"
+                            target         = $name
+                            kind           = $kind
+                            severity       = "medium"
+                            reason         = "outdatedVersions"
+                            currentVersion = $entryVersion
+                            targetVersion  = $guardVersion
+                        }
+
+                        # Normalize the entry's version in-memory. This uses a
+                        # JSON round-trip so it works whether $entry came from
+                        # JSON, YAML, or CBOR, without mutating a shared object
+                        # by reference.
+                        $entryClone = $entry | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+                        $entryClone.version = $guardVersion
+                        $entry = $entryClone
+                    }
+                }
+
+                "staleTimestamps" {
+
+                    $entryUpdated = Resolve-Key $entry "updated"
+
+                    if (-not $entryUpdated) {
+                        $msg = "No 'updated' timestamp found for ${name}."
+
+                        Write-Host ("[UPDATE] {0}" -f $msg) -ForegroundColor Cyan
+                        $entryReport.issues += $msg
+
+                        $entryTasks += @{
+                            type     = "validate-timestamp"
+                            target   = $name
+                            kind     = $kind
+                            severity = "low"
+                            reason   = "staleTimestamps"
+                        }
+                    } else {
+                        $msg = ("Timestamp present for {0} (updated={1}); validation pending." -f `
+                            $name, $entryUpdated)
+
+                        Write-Host ("[UPDATE] {0}" -f $msg) -ForegroundColor Cyan
+                        $entryReport.issues += $msg
+
+                        $entryTasks += @{
+                            type      = "validate-timestamp"
+                            target    = $name
+                            kind      = $kind
+                            severity  = "low"
+                            reason    = "staleTimestamps"
+                            timestamp = $entryUpdated
+                        }
                     }
                 }
             }
         }
-    }
-$entryTasks += @{
-    type           = "update-version"
-    target         = $name
-    kind           = $kind
-    severity       = "medium"
-    reason         = "outdatedVersions"
-    currentVersion = (Resolve-Key $entry "version")
-    targetVersion  = $guard.guardrails.version
-}
 
-# CBOR-safe version update
-$entryVersion = Resolve-Key $entry "version"
-$guardVersion = $guard.guardrails.version
-
-if ($entryVersion -ne $guardVersion) {
-
-    $entryTasks += @{
-        type           = "update-version"
-        target         = $name
-        kind           = $kind
-        severity       = "medium"
-        reason         = "outdatedVersions"
-        currentVersion = $entryVersion
-        targetVersion  = $guardVersion
-    }
-
-    # Update the entry map safely (works for JSON/YAML/CBOR/CBOR-LD)
-# Ensure CBOR-decoded PSObject becomes a hashtable
-$entryMap = $entry | ConvertTo-Json -Depth 20 | ConvertFrom-Json
-
-$entryMap.version = $guardVersion
-$entry = $entryMap
-}
-
-$entryUpdated = Resolve-Key $entry "updated"
-if ($entryUpdated) {
-    $msg = ("Timestamp present for {0} (updated={1}); validation pending." -f $name, $entryUpdated)
-
-
-    $entryUpdated = Resolve-Key $entry "updated"
-
-    if ($entryUpdated) {
-
-        $msg = ("Timestamp present for {0} (updated={1}); validation pending." -f `
-            $name, $entryUpdated)
-
-        Write-Host ("[UPDATE] {0}" -f $msg) -ForegroundColor Cyan
-        $entryReport.issues += $msg
-
-        $entryTasks += @{
-            type      = "validate-timestamp"
-            target    = $name
-            kind      = $kind
-            severity  = "low"
-            reason    = "staleTimestamps"
-            timestamp = $entryUpdated
+        if (Get-Command Invoke-PostUpdateHook -ErrorAction SilentlyContinue) {
+            Invoke-PostUpdateHook
         }
     }
-}
 
-# Close switch-case
-}
+    # DEBUG CHECKS
+    foreach ($dbg in $guard.guardrails.debug.requiresAttention) {
 
-# POST-UPDATE HOOK
-if (Get-Command Invoke-PostUpdateHook -ErrorAction SilentlyContinue) {
-    Invoke-PostUpdateHook
-}
+        $msg = ("{0} check pending for {1}" -f $dbg, $name)
 
-# DEBUG CHECKS
-foreach ($dbg in $guard.guardrails.debug.requiresAttention) {
+        if ($behavior.debugLevel -in @("verbose", "high", "medium")) {
+            Write-Host ("[DEBUG] {0}" -f $msg) -ForegroundColor DarkYellow
+        }
 
-    $msg = ("{0} check pending for {1}" -f $dbg, $name)
+        $entryReport.debug += $msg
 
-    if ($behavior.debugLevel -in @("verbose","high","medium")) {
-        Write-Host ("[DEBUG] {0}" -f $msg) -ForegroundColor DarkYellow
+        $entryTasks += @{
+            type     = "debug-check"
+            target   = $name
+            kind     = $kind
+            severity = "info"
+            reason   = $dbg
+        }
     }
 
-    $entryReport.debug += $msg
-
-    $entryTasks += @{
-        type     = "debug-check"
-        target   = $name
-        kind     = $kind
-        severity = "info"
-        reason   = $dbg
-    }
+    $entryReport.tasks = $entryTasks
+    $report       += $entryReport
+    $handoffTasks += $entryTasks
 }
-
-$entryReport.tasks = $entryTasks
-$report       += $entryReport
-$handoffTasks += $entryTasks
 
 # POST-MANIFEST HOOK
 if (Get-Command Invoke-PostManifestHook -ErrorAction SilentlyContinue) {
