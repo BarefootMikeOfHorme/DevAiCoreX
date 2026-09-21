@@ -7,8 +7,12 @@
     "updated": "2026-09-21T01:05:00Z",
 
     "strict": {
-      // Development mode: no required fields yet
-      "requiredFields": [],
+      "requiredFields": [
+        "version",
+        "modules",
+        "origin",
+        "updated"
+      ],
 
       // Remove corruptedCBOR from fatal errors
       "fatalOn": [

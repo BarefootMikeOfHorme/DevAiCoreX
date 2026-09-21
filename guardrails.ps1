@@ -30,7 +30,9 @@ if (!(Test-Path $manifestPath)) {
 }
 
 # Load guardrails JSON
-$guard = Get-Content $guardJson | ConvertFrom-Json
+$guardRaw   = Get-Content $guardJson -Raw
+$guardClean = ($guardRaw -replace "//.*", "")
+$guard      = $guardClean | ConvertFrom-Json
 
 # Load hooks if present
 if (Test-Path $hooksPs1) {
