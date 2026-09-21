@@ -1,0 +1,115 @@
+# DevAiCoreX Master Index
+# Lists every module with size and a mapped purpose.
+
+Write-Host "Generating DevAiCoreX master index..." -ForegroundColor Cyan
+
+$root = "C:\Users\Administrator\Desktop\DevAiCoreX"
+$indexFile = "$root\master-index.txt"
+
+# Static purpose map (extend as needed)
+$purposeMap = @{
+    "profile-loader.ps1"          = "Loads profiles and shell configs"
+    "logging.ps1"                 = "Central logging utilities"
+    "gpu-check.ps1"               = "GPU capability and status check"
+    "global-profile.ps1"          = "Global PowerShell profile for DevAiCoreX"
+    "game-engine-loader.ps1"      = "Loads game engine modules"
+    "environment.ps1"             = "Environment setup and variables"
+    "engine-register.ps1"         = "Registers engines with DevAiCoreX"
+    "engine-loader.ps1"           = "Loads engine modules"
+    "diagnostics.ps1"             = "Diagnostics and health checks"
+    "devshell-aliases.ps1"        = "Aliases for DevShell / DevAiCoreX"
+    "devai-workspace-tools.ps1"   = "Workspace helper tools"
+    "devai-workspace-test.ps1"    = "Workspace test runner"
+    "devai-workspace-run.ps1"     = "Workspace unified runner"
+    "devai-workspace-inspect.ps1" = "Workspace inspector"
+    "devai-workspace-docs.ps1"    = "Workspace docs generator"
+    "devai-workspace-deploy.ps1"  = "Workspace deploy helper"
+    "devai-workspace-config.ps1"  = "Workspace config manager"
+    "devai-workspace-clean.ps1"   = "Workspace cleanup helper"
+    "devai-workspace-build.ps1"   = "Workspace build helper"
+    "devai-version.ps1"           = "Version management"
+    "devai-update.ps1"            = "Update and version bumping"
+    "devai-test.ps1"              = "Unified test system"
+    "devai-system.ps1"            = "System info module"
+    "devai-shell-tools.ps1"       = "Shell helper tools"
+    "devai-shell-profile.ps1"     = "Shell profile loader"
+    "devai-shell-inspect.ps1"     = "Shell inspector"
+    "devai-selftest.ps1"          = "Framework self-test"
+    "devai-security.ps1"          = "Security checks"
+    "devai-run.ps1"               = "Unified runner"
+    "devai-restore.ps1"           = "Restore from backup"
+    "devai-profile-inspect.ps1"   = "Profile inspector"
+    "devai-paths.ps1"             = "PATH inspector"
+    "devai-network.ps1"           = "Network diagnostics"
+    "devai-help.ps1"              = "Help / command list"
+    "devai-game-tools.ps1"        = "Game engine tools"
+    "devai-game-test.ps1"         = "Game engine test runner"
+    "devai-game-run.ps1"          = "Game engine runner"
+    "devai-game-inspect.ps1"      = "Game engine inspector"
+    "devai-game-docs.ps1"         = "Game engine docs generator"
+    "devai-game-deploy.ps1"       = "Game engine deploy helper"
+    "devai-game-config.ps1"       = "Game engine config manager"
+    "devai-game-clean.ps1"        = "Game engine cleanup helper"
+    "devai-game-build.ps1"        = "Game engine build helper"
+    "devai-env-report.ps1"        = "Environment report"
+    "devai-engine-tools.ps1"      = "Engine tools"
+    "devai-engine-test.ps1"       = "Engine test runner"
+    "devai-engine-run.ps1"        = "Engine runner"
+    "devai-engine-inspect.ps1"    = "Engine inspector"
+    "devai-engine-docs.ps1"       = "Engine docs generator"
+    "devai-engine-deploy.ps1"     = "Engine deploy helper"
+    "devai-engine-config.ps1"     = "Engine config manager"
+    "devai-engine-clean.ps1"      = "Engine cleanup helper"
+    "devai-engine-build.ps1"      = "Engine build helper"
+    "devai-docs-index.ps1"        = "Docs index generator"
+    "devai-deploy.ps1"            = "Unified deploy system"
+    "devai-config-inspect.ps1"    = "Config inspector"
+    "devai-clean-all.ps1"         = "Unified cleanup system"
+    "devai-clean.ps1"             = "Root cleanup utility"
+    "devai-build.ps1"             = "Unified build system"
+    "devai-bootstrap.ps1"         = "Bootstrap loader"
+    "devai-backup-all.ps1"        = "Full backup utility"
+    "devai-ai-tools.ps1"          = "AI tools"
+    "devai-ai-test.ps1"           = "AI test runner"
+    "devai-ai-run.ps1"            = "AI runner"
+    "devai-ai-inspect.ps1"        = "AI inspector"
+    "devai-ai-docs.ps1"           = "AI docs generator"
+    "devai-ai-deploy.ps1"         = "AI deploy helper"
+    "devai-ai-config.ps1"         = "AI config manager"
+    "devai-ai-clean.ps1"          = "AI cleanup helper"
+    "devai-ai-build.ps1"          = "AI build helper"
+    "cross-shell.ps1"             = "Cross-shell utilities"
+    "creation-guardrails.ps1"     = "Creation safety guardrails"
+    "core.ps1"                    = "Core framework logic"
+    "backup-settings.ps1"         = "Backup settings manager"
+    "ai-context-register.ps1"     = "AI context register"
+    "ai-context-loader.ps1"       = "AI context loader"
+    "add-devshell-profile.ps1"    = "Add DevShell profile"
+    "wsl-check.ps1"               = "WSL capability check"
+    "workspace-register.ps1"      = "Workspace register"
+    "workspace-loader.ps1"        = "Workspace loader"
+    "vs-toolchain.ps1"            = "VS toolchain setup"
+    "vs2022-profile.ps1"          = "VS2022 profile"
+    "validation.ps1"              = "Validation utilities"
+    "startup-menu.ps1"            = "Startup menu"
+    "safe-update-settings.ps1"    = "Safe update settings"
+    "routing.ps1"                 = "Routing and dispatch"
+    "project-detector.ps1"        = "Project detection"
+}
+
+$lines = @()
+$lines += "DevAiCoreX Master Index"
+$lines += "Generated: $(Get-Date)"
+$lines += ""
+
+Get-ChildItem -Path $root -Filter "*.ps1" | Sort-Object Name | ForEach-Object {
+    $name = $_.Name
+    $size = $_.Length
+    $purpose = $purposeMap[$name]
+    if (-not $purpose) { $purpose = "Unknown / not mapped" }
+    $lines += "$name`t$size bytes`t$purpose"
+}
+
+$lines | Set-Content $indexFile
+
+Write-Host "Master index written to: $indexFile" -ForegroundColor Green
