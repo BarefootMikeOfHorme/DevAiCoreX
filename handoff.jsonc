@@ -1,856 +1,842 @@
 {
-    "schema":  "1.0",
-    "version":  "1.0.0",
-    "tasks":  [
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "engine",
-                      "type":  "regenerate-cbor",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "engine"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "workspace",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "workspace"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "ai-context",
-                      "type":  "regenerate-cbor",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "ai-context",
-                      "type":  "debug-check",
-                      "kind":  "ai-context"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "game-engine",
-                      "type":  "regenerate-cbor",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "game-engine",
-                      "type":  "debug-check",
-                      "kind":  "game-engine"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "devai-project",
-                      "type":  "regenerate-cbor",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "devai-project",
-                      "type":  "debug-check",
-                      "kind":  "project"
-                  },
-                  {
-                      "reason":  "missingCBOR",
-                      "severity":  "medium",
-                      "target":  "cargo",
-                      "type":  "confirm-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "missingYAMLC",
-                      "severity":  "medium",
-                      "target":  "cargo",
-                      "type":  "regenerate-yamlc",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "missingJSONC",
-                      "severity":  "medium",
-                      "target":  "cargo",
-                      "type":  "regenerate-jsonc",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "cargo",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "cpp",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "cpp",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "multi",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "multi",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "python",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "python",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "unity",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "unity",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "unreal",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "unreal",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "web",
-                      "type":  "regenerate-cbor",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "web",
-                      "type":  "debug-check",
-                      "kind":  "workspace-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "ai",
-                      "type":  "regenerate-cbor",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "ai",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "engine",
-                      "type":  "regenerate-cbor",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "engine",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "game",
-                      "type":  "regenerate-cbor",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "game",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "project",
-                      "type":  "regenerate-cbor",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "project",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "corruptedCBOR",
-                      "severity":  "high",
-                      "target":  "workspace",
-                      "type":  "regenerate-cbor",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "malformedSchema",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unreadableCBOR",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "invalidCommentsJSONC",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "indentationErrorsYAMLC",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "incompleteInheritanceChain",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  },
-                  {
-                      "reason":  "unexpectedFieldTypes",
-                      "severity":  "info",
-                      "target":  "workspace",
-                      "type":  "debug-check",
-                      "kind":  "template-metadata"
-                  }
-              ],
-    "profile":  "development",
-    "generated":  "2026-09-21T01:35:42.2955006-05:00",
-    "mode":  "hybrid"
+  "mode": "hybrid",
+  "tasks": [
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "engine",
+      "kind": "engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "workspace",
+      "kind": "workspace",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "ai-context",
+      "kind": "ai-context",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "game-engine",
+      "kind": "game-engine",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "devai-project",
+      "kind": "project",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "cargo",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "cpp",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "multi",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "python",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "unity",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "unreal",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "web",
+      "kind": "workspace-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "ai",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "engine",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "game",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "project",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "low",
+      "type": "validate-timestamp",
+      "reason": "staleTimestamps"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "malformedSchema"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unreadableCBOR"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "invalidCommentsJSONC"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "indentationErrorsYAMLC"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "incompleteInheritanceChain"
+    },
+    {
+      "target": "workspace",
+      "kind": "template-metadata",
+      "severity": "info",
+      "type": "debug-check",
+      "reason": "unexpectedFieldTypes"
+    }
+  ],
+  "profile": "development",
+  "schema": "1.0",
+  "generated": "2026-09-21T03:24:41.5139286-05:00",
+  "version": "1.0.0"
 }

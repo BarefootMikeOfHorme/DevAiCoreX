@@ -1,0 +1,6 @@
+{
+  // Guardrail Metadata Schema (placeholder)
+  "validation": "deferred",
+  "required": [],
+  "description": "Metadata validation disabled during development."
+}

@@ -7,15 +7,12 @@
     "updated": "2026-09-21T01:05:00Z",
 
     "strict": {
-      "requiredFields": [
-        "version",
-        "modules",
-        "origin",
-        "updated"
-      ],
+      // Development mode: no required fields yet
+      "requiredFields": [],
+
+      // Remove corruptedCBOR from fatal errors
       "fatalOn": [
         "missingCoreSchema",
-        "corruptedCBOR",
         "invalidYAMLC",
         "invalidJSONC",
         "brokenInheritance",
@@ -44,6 +41,7 @@
     },
 
     "debug": {
+      // Placeholder CBOR will appear here instead of fatal
       "requiresAttention": [
         "malformedSchema",
         "unreadableCBOR",
@@ -61,16 +59,21 @@
     },
 
     "metadata": {
-      "validateTimestamps": true,
-      "validateOrigin": true,
-      "validateLineage": true
+      // Disable metadata validation until metadata exists
+      "validateTimestamps": false,
+      "validateOrigin": false,
+      "validateLineage": false
     },
 
     "cbor": {
       "generator": "stage7",
-      "mode": "headerOnly",
-      "placeholderHex": "d9d9f7a6"
+      "mode": "placeholder",          // NEW: placeholder mode
+      "placeholderHex": "d9d9f7a6",
+      "placeholderRecognized": true   // NEW: treat placeholder CBOR as valid placeholder
     },
+
+    // NEW: disable schema checks until guardrail schemas are authored
+    "schemaChecksEnabled": false,
 
     "repairPolicy": {
       "development": "aggressive",

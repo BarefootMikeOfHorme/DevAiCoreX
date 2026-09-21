@@ -1,0 +1,9 @@
+{
+  // Guardrail Mode Schema (placeholder)
+  "modes": {
+    "development": "placeholder",
+    "testing": "placeholder",
+    "production": "placeholder"
+  },
+  "description": "Guardrail mode definitions will be expanded later."
+}

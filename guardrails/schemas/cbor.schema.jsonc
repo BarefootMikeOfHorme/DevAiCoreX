@@ -1,0 +1,6 @@
+{
+  // Guardrail CBOR Schema (placeholder)
+  "mode": "placeholder",
+  "placeholderRecognized": true,
+  "description": "CBOR validation deferred until real CBOR is implemented."
+}

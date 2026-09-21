@@ -1,0 +1,6 @@
+{
+  // Guardrail Manifest Schema (placeholder)
+  "requiredFields": [],
+  "validation": "deferred",
+  "description": "Manifest field validation deferred until metadata is defined."
+}

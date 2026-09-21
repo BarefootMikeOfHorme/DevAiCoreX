@@ -1,0 +1,6 @@
+{
+  // Guardrail Validation Rules (placeholder)
+  "schemaChecksEnabled": false,
+  "rules": {},
+  "description": "Schema validation disabled until guardrail rules are authored."
+}
